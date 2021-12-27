@@ -1,0 +1,19 @@
+body{
+    min-height:100vh;
+    width: 100%;   
+    background-image:url('../../assets/brbnd.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.d1{
+    padding-top: 60px;
+}
+.frm1 form{
+    
+    padding: 15px;
+    max-width: 500px;
+    margin-left: 530px;
+    background:linear-gradient(to top,rgba(131, 127, 127, 0.9)50%,rgba(131, 127, 127, 0.9)50%);
+    border-radius: 5px;
+}

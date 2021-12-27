@@ -1,0 +1,43 @@
+<br>
+<div class="sr">
+<div id="s" class="form-group">
+    <input class="form-control"  [(ngModel)]= "searchText" type="text" placeholder="Search">
+    <!-- <button class="btn btn-success">Search</button> -->
+</div>
+</div>
+<table  id="tb" >
+    <thead  >
+        <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>GenDate</th>
+        <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let l of lead | filter:searchText" >
+        <td>{{l.Lead_Id}}</td>
+        <td>{{l.Lead_Name}}</td>
+        <td>{{l.Lead_Email}}</td>
+        <td>{{l.Lead_Phone}}</td>
+        <td>{{l.Lead_Gender}}</td>
+        <td>{{l.Lead_Address}}</td>
+        <td>{{l.Lead_Gen_Date}}</td>
+        <td >  
+            <!-- <button class="btn btn-success" (click)='updateLead(l.Lead_Id,lead)'>EDIT</button> -->
+            <a [routerLink]="['/edit',l.Lead_Id]" class="btn btn-success">UPDATE</a>&nbsp;     
+            <button class="btn btn-danger" (click)='deleteLead(l.Lead_Id)'>DELETE</button>
+        <td>
+        <!-- <td>
+                <button class="btn btn-danger" (click)='deleteLead(l.Lead_Id)'>DELETE</button>
+        </td>     -->
+    </tr>
+    </tbody>
+</table>
+<!-- <router-outlet></router-outlet> -->
+<!-- onclick='editData()' -->
+<!-- onclick='deleteData()'  -->

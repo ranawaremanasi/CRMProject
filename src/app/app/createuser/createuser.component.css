@@ -1,0 +1,101 @@
+body{
+    min-height:100vh;
+    width: 100%;   
+    background-image:url('../../assets/bcity.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.form1{
+    position: absolute;
+    max-width: 400px;
+    background:linear-gradient(to top,rgba(0,0,0,0.7)50%,rgba(0,0,0,0.7)50%);
+    top: 70px;
+    left: 580px;
+    border-radius: 15px;
+    padding: 25px;
+    
+}
+.form1 h2{
+    color: rgb(199, 229, 247);
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 28px;
+    
+}
+.btn{
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    margin-top: 25px;
+    background-color: rgb(179, 177, 176);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.4s ease-in-out;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Arial;
+} 
+.btn:hover{
+    background:white;
+    color: rgb(15, 13, 13);
+  
+}
+
+.btn1{
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    margin-top: 10px;
+    background-color: rgb(250, 198, 196);
+    padding: 8px;
+    border-radius: 10px;
+    transition: 0.4s ease-in-out;
+    
+} 
+.btn1 a{
+    color: rgb(3, 3, 3);
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer; 
+    
+}
+.btn1:hover{
+    background:white;
+    color: rgb(15, 13, 13);
+  
+}
+
+.form1 input{
+   width: 350px;
+   color: white;
+   height: 35px;
+   font-family: sans-serif;
+   background: transparent;
+   border-bottom: 1px solid rgb(134, 133, 133);
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   font-size: 15px;
+   letter-spacing: 1px;
+   margin-top: 20px;
+   
+}
+
+.form1 input:focus{
+    
+    outline:none;
+}
+::placeholder{
+    color: rgb(231, 224, 224);
+}

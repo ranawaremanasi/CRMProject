@@ -1,0 +1,35 @@
+<body>
+    <div class="frm1">
+
+<form  #form="ngForm" >
+<div class="form">
+    <i class="bi bi-person-fill" ></i>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(199, 229, 247)" class="bi bi-person-fill" viewBox="0 0 16 16" style="margin-left: 123px;">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      </svg>
+    <h2>Login</h2>
+
+    <div class="form-group">
+    <input type="email" name="uemail" #email='ngModel' ngModel placeholder="Enter Valid Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+    <div class="alert alert-danger" *ngIf= "email.invalid && email.touched">
+
+        <div *ngIf= "email.errors?.['required']">Enter Email</div>
+        <div *ngIf= "email.errors?.['pattern']">Enter Email in valid pattern</div>
+    </div>
+    </div> 
+
+    <div class="form-group">
+    <input type="password" name="upass" #pass='ngModel'  ngModel placeholder="Enter Password" required pattern=""/><br>
+    <div class="alert alert-danger" *ngIf= "pass.invalid && pass.touched">
+
+        <div *ngIf= "pass.errors?.['required']">Enter Password</div>
+        <div *ngIf= "pass.errors?.['pattern']">Enter Valid Password</div>
+    </div>
+</div>
+    <a class="btn btn-success" id="b" (click)="onSubmit(form.value)" >Login</a>
+    <p class="ac">Don't have an account<br>
+    <a routerLink='./create'>Create account</a></p> 
+</div>
+</form>
+</div>
+</body>

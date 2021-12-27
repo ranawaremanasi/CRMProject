@@ -1,0 +1,124 @@
+<!-- ---------------TemplateDrivenForm------------- -->
+<!-- <body class="container" style="max-width: 500px">
+
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+        <h3 style="text-align: center;">UpdateLead</h3>
+        <div class="form-group" >
+            <label>Name</label>
+            <input type="text" class="form-control" #nm='ngModel' ngModel name="lname" required minlength="4" maxlength="20" placeholder="Enter Your Name">
+            <div class="alert alert-danger" *ngIf= "nm.invalid && nm.touched">
+
+                <div *ngIf= "nm.errors?.['required']">Enter full name</div>
+                <div *ngIf= "nm.errors?.['minlength']">Name should be minimum 4 letters</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" #email='ngModel' ngModel  name="email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="Enter Your Email (abc123@gmail.com)" >
+            <div class="alert alert-danger" *ngIf= "email.invalid && email.touched">
+
+            <div *ngIf= "email.errors?.['required']">Enter Email</div>
+            <div *ngIf= "email.errors?.['pattern']">Enter Email in valid pattern</div>
+        </div>
+        </div>
+
+        <div class="form-group" >
+            <label>Phone</label>
+            <input type="tel" class="form-control" #ph='ngModel' ngModel name="ph" maxlength="10" required pattern="[0-9]{10}" placeholder="Enter Your Phone Number">
+            <div class="alert alert-danger"  *ngIf= "ph.invalid && ph.touched">
+
+                <div *ngIf= "ph.errors?.['required']">Enter Phone Number</div>
+                <div *ngIf= "ph.errors?.['pattern']">Enter Valid Phone Number</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label><br>
+            <input type="radio"  name="gender" required>Male
+            <input type="radio" name="gender" required>Female
+            <input type="radio" name="gender" required>Other
+
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <textarea class="form-control" name="addr" required rows="3" cols="40" minlength="20" maxlength="160"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Date</label>
+            <input type="date" class="form-control" name="gdate" required>
+        </div>
+
+        <div class="mt-2">
+            <button class="btn btn-secondary" [disabled]= "form.invalid" id="lg">Update</button>&nbsp;
+            <input type="reset" value="Reset"  class="btn btn-success">    
+        </div>       
+</form>
+</body> -->
+
+<!-- ------------------------------------------------------------------------------- -->
+<!-- ----------------------ReactiveForm---------------------------- -->
+
+
+<body >
+    <div class="d1">
+    <div class="frm1" >
+    <form [formGroup]='myForm' (ngSubmit)="onSubmit(myForm)">
+        <h3 style="text-align: center;">Update Lead</h3>
+        <div class='formGroup'>
+            <label><h6>Name</h6></label><br>
+            <input class="form-control" type='text' formControlName='name' placeholder="Enter Your Name" style="margin-bottom: 10px;" >
+        <div class ='formGroup' *ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched" >
+            <div style="margin-top:2px" class='alert alert-danger' *ngIf="myForm.controls['name'].errors?.['required']">Please Enter Name</div>
+            <div style="margin-top:2px" class='alert alert-danger' *ngIf="myForm.controls['name'].errors?.['minlength']">Name should be min 4 letters</div>
+        </div>
+        
+        </div>
+
+        <div class='formGroup'>
+                <label><h6>Email</h6></label><br>
+            <input type='email' class="form-control" formControlName='email' placeholder="Enter Your Email (abc123@gmail.com)" style="margin-bottom: 10px;" >
+            <div class ='formGroup' *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched" >
+                <div style="margin-top:2px" class='alert alert-danger' *ngIf="myForm.controls['email'].errors?.['required']">Please Enter Email</div>
+                <div style="margin-top:2px" class ="alert alert-danger" *ngIf="myForm.controls['email'].errors?.['pattern']">Pleas Provide Valid Email</div> 
+            </div>
+              
+        </div>
+
+        <div class='formGroup'>
+            <label><h6>Phone</h6></label><br>
+            <input type='text' class="form-control" formControlName='phone' placeholder="Enter Valid Phone Number" style="margin-bottom: 10px;" >
+            <div class ='formGroup' *ngIf="myForm.controls['phone'].invalid && myForm.controls['phone'].touched" >
+                <div style="margin-top:2px" class='alert alert-danger' *ngIf="myForm.controls['phone'].errors?.['required']">Please Enter Phone Number</div>
+                <div style="margin-top:2px" class ="alert alert-danger" *ngIf="myForm.controls['phone'].errors?.['pattern']">Please Enter Valid Phone Number</div>
+            </div>
+               
+        </div>
+
+        <div class="form-group">
+            <label><h6>Gender</h6></label><br>
+            <input type="radio" formControlName="gender" value=Male>Male 
+            <input type="radio" formControlName="gender" value=Female>Female  
+            <input type="radio" formControlName="gender" value=Other style="margin-bottom: 10px;">Other  
+        </div>
+           
+        <div class='formGroup'>
+            <label><h6>Address</h6></label><br>
+            <textarea class="form-control" name="" id="a"  cols="40" rows="3" formControlName='add' style="margin-bottom: 10px;"></textarea>         
+        </div>
+
+        <div class='formGroup'>
+            <label><h6>Created On</h6></label><br>
+            <input class="form-control" type='date' formControlName='date' style="margin-bottom: 12px;">  
+        </div>
+    
+        <div class='formGroup'>   
+            <button class="btn btn-success" type="submit"   [disabled]="myForm.invalid">Update</button>&nbsp;
+            <button class="btn btn-dark" routerLink='/adminlead'>Cancel</button>
+        </div>
+</form>
+</div>
+</div>
+</body>
